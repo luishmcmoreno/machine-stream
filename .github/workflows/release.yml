@@ -27,8 +27,6 @@ jobs:
     - run: npm install -g @angular/cli > /dev/null
     - run: ng build --prod
     - run: npx netlify deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod --dir dist/machine-stream
-    - uses: actions/checkout@v1
-    - uses: jsmrcaga/action-netlify-deploy@master
       with:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
