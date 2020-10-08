@@ -26,7 +26,6 @@ jobs:
     - run: npm install
     - run: npm install -g @angular/cli > /dev/null
     - run: ng build --prod
- 
       - uses: actions/checkout@v1
       - uses: jsmrcaga/action-netlify-deploy@master
         with:
