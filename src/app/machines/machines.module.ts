@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { MachinesRoutingModule } from './machines-routing.module';
 import { MachineListPageComponent } from './pages/machine-list-page/machine-list-page.component';
 import { MachineDetailsPageComponent } from './pages/machine-details-page/machine-details-page.component';
@@ -15,14 +14,29 @@ import { MachineListDumbComponent } from './dumbs/machine-list-dumb/machine-list
 import { MachineDetailsDumbComponent } from './dumbs/machine-details-dumb/machine-details-dumb.component';
 import { DashboardDumbComponent } from './dumbs/dashboard-dumb/dashboard-dumb.component';
 import { EventMonitorDumbComponent } from './dumbs/event-monitor-dumb/event-monitor-dumb.component';
-import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
+import { MachineContainerComponent } from './pages/machine-container/machine-container.component';
 
 
 @NgModule({
-  declarations: [MachineListPageComponent, MachineDetailsPageComponent, EventMonitorPageComponent, DashboardPageComponent, FilterMachineComponent, MachineListComponent, MachineDetailsComponent, EventMonitorComponent, DashboardComponent, MachineListDumbComponent, MachineDetailsDumbComponent, DashboardDumbComponent, EventMonitorDumbComponent, LayoutPageComponent],
+  declarations: [
+    MachineListPageComponent,
+    MachineDetailsPageComponent,
+    EventMonitorPageComponent,
+    DashboardPageComponent,
+    FilterMachineComponent,
+    MachineListComponent,
+    MachineDetailsComponent,
+    EventMonitorComponent,
+    DashboardComponent,
+    MachineListDumbComponent,
+    MachineDetailsDumbComponent,
+    DashboardDumbComponent,
+    EventMonitorDumbComponent,
+    MachineContainerComponent,
+  ],
   imports: [
     CommonModule,
-    MachinesRoutingModule
-  ]
+    MachinesRoutingModule,
+  ],
 })
 export class MachinesModule { }
