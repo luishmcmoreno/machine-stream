@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~10.1.4",
     "@angular/router": "~10.1.4",
     "admin-lte": "^3.0.5",
+    "phoenix": "^1.5.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -33,6 +34,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "^3.5.2",
     "@types/node": "^12.11.1",
+    "@types/phoenix": "^1.5.0",
     "codelyzer": "^6.0.0",
     "install": "^0.13.0",
     "jasmine-core": "~3.6.0",

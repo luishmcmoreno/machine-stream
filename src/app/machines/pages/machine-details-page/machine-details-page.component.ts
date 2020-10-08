@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-machine-details-page',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MachineDetailsPageComponent implements OnInit {
 
-  constructor() { }
+  params$ = this.activatedRoute.params;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
   }

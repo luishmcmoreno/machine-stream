@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LayoutPageComponent } from './layout-page.component';
+import { MachineContainerComponent } from './machine-container.component';
 
-describe('LayoutPageComponent', () => {
-  let component: LayoutPageComponent;
-  let fixture: ComponentFixture<LayoutPageComponent>;
+describe('MachineContainerComponent', () => {
+  let component: MachineContainerComponent;
+  let fixture: ComponentFixture<MachineContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LayoutPageComponent ]
+      declarations: [ MachineContainerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LayoutPageComponent);
+    fixture = TestBed.createComponent(MachineContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
