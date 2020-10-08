@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  machine-stream-build:
+    container_name: machine-stream-container
+    build: .
+    ports:
+      - '9000:80'
