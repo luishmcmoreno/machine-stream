@@ -14,7 +14,7 @@
                     <tr *ngIf="event.id">
                         <td>{{ event.id }}</td>
                         <td><a href="#" [routerLink]="['/machine/' + event.machine_id + '/details']">{{ event.machine_id }}</a></td>
-                        <td>{{ event.status }}</td>
+                        <td><span class="badge bg-{{ MachineStatusBg[event.status] }}">{{ event.status }}</span></td>
                         <td>{{ event.timestamp | date:'short' }}</td>
                     </tr>
                 </ng-container>

@@ -17,7 +17,7 @@
                         <td>{{ machine.floor }}</td>
                         <td>{{ machine.install_date | date:'short' }}</td>
                         <td>{{ machine.last_maintenance | date:'short' }}</td>
-                        <td>{{ machine.status }}</td>
+                        <td><span class="badge bg-{{ MachineStatusBg[machine.status] }}">{{ machine.status }}</span></td>
                     </tr>
                 </ng-container>
             </tbody>
