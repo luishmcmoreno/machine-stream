@@ -1,1 +1,8 @@
-<p>dashboard works!</p>
+<div class="row" *ngIf="machines$ | async as machines">
+    <div class="col-md-6">
+        <app-dashboard-dumb [machines]="machines"></app-dashboard-dumb>
+    </div>
+    <div class="col-md-6">
+        <app-machine-location-dumb [machines]="machines"></app-machine-location-dumb>
+    </div>
+</div>

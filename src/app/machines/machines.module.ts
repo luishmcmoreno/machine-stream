@@ -15,7 +15,8 @@ import { MachineDetailsDumbComponent } from './dumbs/machine-details-dumb/machin
 import { DashboardDumbComponent } from './dumbs/dashboard-dumb/dashboard-dumb.component';
 import { EventMonitorDumbComponent } from './dumbs/event-monitor-dumb/event-monitor-dumb.component';
 import { MachineContainerComponent } from './pages/machine-container/machine-container.component';
-
+import { MachineLocationDumbComponent } from './dumbs/machine-location-dumb/machine-location-dumb.component';
+import { MachineByStatusPipe } from './pipes/machine-by-status/machine-by-status.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,8 @@ import { MachineContainerComponent } from './pages/machine-container/machine-con
     DashboardDumbComponent,
     EventMonitorDumbComponent,
     MachineContainerComponent,
+    MachineLocationDumbComponent,
+    MachineByStatusPipe,
   ],
   imports: [
     CommonModule,
