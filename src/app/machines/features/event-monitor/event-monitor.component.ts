@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MachinesService } from '../../services/machines/machines.service';
 
 @Component({
   selector: 'app-event-monitor',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventMonitorComponent implements OnInit {
 
-  constructor() { }
+  public events$ = this.machineService.events$;
+
+  constructor(
+    private machineService: MachinesService,
+  ) { }
 
   ngOnInit(): void {
   }
