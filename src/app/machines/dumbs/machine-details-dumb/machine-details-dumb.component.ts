@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IMachine } from '../../models/machines.model';
 
 @Component({
   selector: 'app-machine-details-dumb',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./machine-details-dumb.component.scss']
 })
 export class MachineDetailsDumbComponent implements OnInit {
+
+  @Input() machine: IMachine;
 
   constructor() { }
 
