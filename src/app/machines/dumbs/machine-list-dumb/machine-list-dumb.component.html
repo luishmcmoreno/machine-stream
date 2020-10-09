@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Floor</th>
+                    <th>Install date</th>
+                    <th>Last maintenance date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let machine of machineList">
+                    <tr>
+                        <td><a href="#" [routerLink]="['/machine/' + machine.id + '/details']">{{ machine.id }}</a></td>
+                        <td>{{ machine.floor }}</td>
+                        <td>{{ machine.install_date | date:'short' }}</td>
+                        <td>{{ machine.last_maintenance | date:'short' }}</td>
+                        <td><span class="badge bg-{{ MachineStatusBg[machine.status] }}">{{ machine.status }}</span></td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

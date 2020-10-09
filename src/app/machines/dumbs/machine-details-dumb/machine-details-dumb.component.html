@@ -1,0 +1,44 @@
+<div class="row" *ngIf="machine">
+    <div class="col col-sm-6">
+        <div class="callout callout-success">
+            <p> <b>Machine:</b> {{ machine.id }}</p>
+            <p> <b>Floor:</b> {{ machine.floor }}</p>
+            <p> <b>Install date:</b> {{ machine.install_date | date:'short'}}</p>
+            <p> <b>Last maintenance:</b> {{ machine.last_maintenance | date:'short'}}</p>
+            <p> <b>Status: </b> <span class="badge bg-{{ MachineStatusBg[machine.status] }}">{{ machine.status }}</span></p>
+            <p> <b>Machine Type:</b> {{ machine.machine_type }}</p>
+            
+        </div>
+    </div>
+    <div class="col col-sm-6">
+        <app-machine-location-dumb [machines]="[machine]"></app-machine-location-dumb>
+    </div>
+</div>
+
+<div class="row" *ngIf="machine?.events.length > 0">
+    <div class="col offset-sm-2 col-sm-8">
+        <div class="card">
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let event of machine.events">
+                            <tr>
+                                <td>{{ event.status }}</td>
+                                <td>{{ event.timestamp | date:'short' }}</td>
+                            </tr>
+                        </ng-container>
+                        <tr *ngIf="machine.events?.length === 1">
+                            <td> No events registered so far </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>       
+    </div>
+</div>

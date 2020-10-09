@@ -1,0 +1,40 @@
+<div class="login-container">
+
+    <form [formGroup]="loginFormGroup" *ngIf="loginFormGroup" >
+
+        <div *ngIf="loginFormGroup.controls['email'] as email" class="mb-3">
+            <div class="input-group" [class.error]="email.touched && email.dirty && email.invalid">
+                <input class="form-control" [formControl]="email" type="text" placeholder="e.g., luis.moreno@zeiss.com">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-envelope"></span>
+                    </div>
+                </div>
+            </div>
+            <ng-container *ngIf="email.touched && email.dirty">
+                <div class="error-msg" *ngIf="email.getError('required')">Please, email is required</div>
+                <div class="error-msg" *ngIf="email.getError('email')">Please, provide a valid email</div>
+            </ng-container>
+        </div>
+
+        <div *ngIf="loginFormGroup.controls['password'] as password" class="mb-3">
+            <div class="input-group" [class.error]="password.touched && password.dirty && password.invalid">
+                <input class="form-control" [formControl]="password" type="password" placeholder="e.g., •••••••">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                    </div>
+                </div>
+            </div>
+            <ng-container *ngIf="password.touched && password.dirty">
+                <div class="error-msg" *ngIf="password.getError('required')">Please, password is required</div>
+                <div class="error-msg" *ngIf="password.getError('minlength')">Please, the password must contain at least
+                    6 characters.</div>
+                <div class="error-msg" *ngIf="password.getError('maxlength')">Please, the password must contain at least
+                    16 characters.</div>
+            </ng-container>
+        </div>
+
+        <button class="btn btn-block btn-primary" [disabled]="loginFormGroup.invalid" (click)="send()">Login</button>
+    </form>
+</div>
