@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 import { LoginService } from '../../../auth/services/login/login.service';
 import { MachinesService } from '../../services/machines/machines.service';
 
@@ -9,6 +10,8 @@ import { MachinesService } from '../../services/machines/machines.service';
   styleUrls: ['./machine-container.component.scss']
 })
 export class MachineContainerComponent implements OnInit, OnDestroy {
+
+  $eventsCount = this.machineService.events$.pipe(map(events => events.length - 1));
 
   constructor(
     private loginService: LoginService,
