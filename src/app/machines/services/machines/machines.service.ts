@@ -76,7 +76,6 @@ export class MachinesService {
     this.channel = this.socket.channel('events');
     this.eventsSubject.next({});
     this.channel.on('new', res => this.eventsSubject.next(res));
-    this.events$.subscribe(ev => console.log(ev));
     this.channel.join();
   }
 

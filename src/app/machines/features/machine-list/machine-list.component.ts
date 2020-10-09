@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MachinesService } from '../../services/machines/machines.service';
 
 @Component({
   selector: 'app-machine-list',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MachineListComponent implements OnInit {
 
-  constructor() { }
+  machine$ = this.machineService.getAllMachines();
+
+  constructor(
+    private machineService: MachinesService,
+  ) { }
 
   ngOnInit(): void {
   }
