@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MachineStatusBg } from '../../models/machine-status-color.map';
 import { IMachine } from '../../models/machines.model';
 
 @Component({
@@ -9,6 +10,7 @@ import { IMachine } from '../../models/machines.model';
 export class MachineListDumbComponent implements OnInit {
 
   @Input() machineList: IMachine[];
+  MachineStatusBg = MachineStatusBg;
 
   constructor() { }
 

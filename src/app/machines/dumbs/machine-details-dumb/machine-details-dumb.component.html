@@ -5,7 +5,7 @@
             <p> <b>Floor:</b> {{ machine.floor }}</p>
             <p> <b>Install date:</b> {{ machine.install_date | date:'short'}}</p>
             <p> <b>Last maintenance:</b> {{ machine.last_maintenance | date:'short'}}</p>
-            <p> <b>Status:</b> {{ machine.status }}</p>
+            <p> <b>Status: </b> <span class="badge bg-{{ MachineStatusBg[machine.status] }}">{{ machine.status }}</span></p>
             <p> <b>Machine Type:</b> {{ machine.machine_type }}</p>
             
         </div>
