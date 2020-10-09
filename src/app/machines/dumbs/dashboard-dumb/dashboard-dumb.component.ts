@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MachineStatus } from '../../models/machine-status.enum';
+import { IMachine } from '../../models/machines.model';
 
 @Component({
   selector: 'app-dashboard-dumb',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-dumb.component.scss']
 })
 export class DashboardDumbComponent implements OnInit {
+
+  @Input() machines: IMachine[];
+  MachineStatus = MachineStatus;
 
   constructor() { }
 

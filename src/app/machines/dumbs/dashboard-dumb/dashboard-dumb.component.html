@@ -1,1 +1,73 @@
-<p>dashboard-dumb works!</p>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Machine Status Overview </h3>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Quantity</th>
+                    <th style="width: 40px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> {{ MachineStatus.Idle }} </td>
+                    <ng-container *ngIf="machines | machineByStatus:MachineStatus.Idle as idleMachines">
+                        <td class="progress-td">
+                            <div class="progress progress-xs">
+                                <div class="progress-bar bg-info" [style.width]="(idleMachines.length/machines.length)*100 + '%'"></div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-info">{{(idleMachines.length/machines.length)*100 | number:'1.2-2' }}%</span></td>
+                    </ng-container>
+                </tr>
+                <tr>
+                    <td> {{ MachineStatus.Running }} </td>
+                    <ng-container *ngIf="machines | machineByStatus:MachineStatus.Running as runningMachines">
+                        <td class="progress-td">
+                            <div class="progress progress-xs">
+                                <div class="progress-bar bg-success" [style.width]="(runningMachines.length/machines.length)*100 + '%'"></div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-success">{{(runningMachines.length/machines.length)*100 | number:'1.2-2' }}%</span></td>
+                    </ng-container>
+                </tr>
+                <tr>
+                    <td> {{ MachineStatus.Finished }} </td>
+                    <ng-container *ngIf="machines | machineByStatus:MachineStatus.Finished as finishedMachines">
+                        <td class="progress-td">
+                            <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar bg-primary" [style.width]="(finishedMachines.length/machines.length)*100 + '%'"></div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-primary">{{(finishedMachines.length/machines.length)*100 | number:'1.2-2' }}%</span></td>
+                    </ng-container>
+                </tr>
+                <tr>
+                    <td> {{ MachineStatus.Errored }} </td>
+                    <ng-container *ngIf="machines | machineByStatus:MachineStatus.Errored as erroredMachines">
+                        <td class="progress-td">
+                            <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar bg-danger" [style.width]="(erroredMachines.length/machines.length)*100 + '%'"></div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-danger">{{(erroredMachines.length/machines.length)*100 | number:'1.2-2' }}%</span></td>
+                    </ng-container>
+                </tr>
+                <tr>
+                    <td> {{ MachineStatus.Repaired }} </td>
+                    <ng-container *ngIf="machines | machineByStatus:MachineStatus.Repaired as repairedMachines">
+                        <td class="progress-td">
+                            <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar bg-warning" [style.width]="(repairedMachines.length/machines.length)*100 + '%'"></div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-warning">{{(repairedMachines.length/machines.length)*100 | number:'1.2-2' }}%</span></td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
